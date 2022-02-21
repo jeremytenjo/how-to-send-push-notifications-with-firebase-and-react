@@ -8,7 +8,7 @@ export default function LinkToPortfolio() {
     <Wrapper>
       💫 Find more tutorials at{' '}
       <Link
-        href='https://jeremytenjo.com/tutorials'
+        href='https://www.jeremytenjo.com/tutorials'
         newTab
         sx={{
           color: 'primary.main',
