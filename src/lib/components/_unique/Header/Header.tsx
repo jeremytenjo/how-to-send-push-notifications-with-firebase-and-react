@@ -16,7 +16,7 @@ export default function Header({ title, tutorialLink, repoLink }: HeaderProps) {
         <Link href={tutLink} newTab>
           tutorial
         </Link>
-        {` `}
+        {` `}& {` `}
         <Link href={repoLink} newTab>
           repo
         </Link>
