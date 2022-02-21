@@ -4,10 +4,9 @@ module.exports = {
     commonjs: true,
     node: true,
     es6: true,
-    'cypress/globals': true,
   },
   ignorePatterns: ['node_modules', 'build', '.env', 'ios', 'android', 'dist'],
-  plugins: ['react', 'react-hooks', 'import', 'cypress'],
+  plugins: ['react', 'react-hooks', 'import'],
   extends: [
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',

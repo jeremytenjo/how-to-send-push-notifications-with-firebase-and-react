@@ -17,7 +17,7 @@
     "noImplicitAny": false,
     "jsx": "react",
     "baseUrl": "./",
-    "types": ["vite/client", "cypress", "vite-plugin-pwa/client", "node"],
+    "types": ["vite/client", "vite-plugin-pwa/client", "node"],
     "paths": {
       "*": ["devtools/ts/declaredModules/*"]
     }

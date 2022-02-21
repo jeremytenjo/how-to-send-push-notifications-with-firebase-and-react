@@ -1,13 +1,11 @@
 import React from 'react'
 import { FirebaseProvider } from '@useweb/use-firebase'
 import { initializeApp } from 'firebase/app'
-import { getFunctions } from 'firebase/functions'
 import { getMessaging } from 'firebase/messaging'
 
 import firebaseConfig from './firebase.config'
 
 const firebaseApp = initializeApp(firebaseConfig)
-const functions = getFunctions(firebaseApp)
 const messaging = getMessaging(firebaseApp)
 
 const envIsDev = process.env.NODE_ENV === 'development'
@@ -24,7 +22,6 @@ export default function Firebase({ children }) {
       messagingOptions={{
         vapidKey,
       }}
-      functions={functions}
     >
       {children}
     </FirebaseProvider>

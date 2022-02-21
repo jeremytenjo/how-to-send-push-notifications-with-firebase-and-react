@@ -12,7 +12,7 @@ export default {
           }     
        
           * {
-            box-sizing: border-box;
+            box-sizing: border-box; 
           }
 
           html {
@@ -28,6 +28,10 @@ export default {
             margin: 0;
             overscroll-behavior-y: contain;
             padding: 20px;
+          }
+
+          a {
+            color:  ${colors.primary.main};
           }
 
           p,
