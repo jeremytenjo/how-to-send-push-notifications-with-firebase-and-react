@@ -2,8 +2,10 @@
 
 1. Update `firebaseConfig` in `src/Firebase/Firebase.tsx` with your project's configuration.
 
-2. Update `firebase project id` in `.firebaserc` with your project's id.
+2. Update `firebaseConfig` in `public/firebase-messaging-sw.js` with your project's configuration.
 
-3. run `npm i && npm run dev`
+3. Update `firebase project id` in `.firebaserc` with your project's id.
 
-4. open `http://localhost:3001/`
+4. run `npm i && npm run dev`
+
+5. open `http://localhost:3001/`

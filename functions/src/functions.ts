@@ -1,8 +1,13 @@
 import * as functions from 'firebase-functions'
+import admin from 'firebase-admin'
 
 import getAppConfig from '../../app.config'
 
 import _sendNotification from './sendNotification/sendNotification'
+
+admin.initializeApp({
+  credential: admin.credential.applicationDefault(),
+})
 
 // https://firebase.google.com/docs/functions/get-started
 

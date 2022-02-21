@@ -27,6 +27,7 @@ export default {
             box-sizing: border-box;
             margin: 0;
             overscroll-behavior-y: contain;
+            padding: 20px;
           }
 
           p,

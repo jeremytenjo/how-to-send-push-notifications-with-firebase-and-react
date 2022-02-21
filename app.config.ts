@@ -9,8 +9,8 @@ export default async function appConfig(): Promise<AppConfigTypes> {
     },
     manifestJson: {
       gcm_sender_id: '103953800507',
-      name: 'starter',
-      short_name: 'starter',
+      name: 'how-to-use-firebase-messaging-with-react',
+      short_name: 'how-to-use-firebase-messaging-with-react',
       description: pkg.description,
       start_url: '/',
       orientation: 'any',

@@ -1,11 +1,18 @@
+import sendFCMMessage from '../utils/firebase/messaging/sendFCMMessage/sendFCMMessage.js'
+
 type SendNotificationProps = {
   payload: {
-    name: string
+    fcmRegistrationToken: string
   }
 }
 
 export default async function sendNotification({ payload }: SendNotificationProps) {
-  const result = { name: `hello my name is ${payload.name}` }
+  const title = `Hello from 'sendNotification' cloud notification`
+  await sendFCMMessage({
+    title: title,
+    icon: `/images/logo/assets/logo.png`,
+    registrationTokens: [payload.fcmRegistrationToken],
+  })
 
-  return result
+  return title
 }

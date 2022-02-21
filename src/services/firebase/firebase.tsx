@@ -7,6 +7,7 @@ import { getFirestore } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
 import firebaseJson from '../../../firebase.json'
+
 import testUser from './emulator/testUser'
 import firebaseConfig from './firebase.config'
 

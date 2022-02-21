@@ -6,7 +6,6 @@ export default {
       root: {
         borderRadius: '10px',
         fontWeight: 'bold',
-        width: '100%',
         textTransform: 'none' as const,
       },
     },
