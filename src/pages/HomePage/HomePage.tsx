@@ -47,7 +47,21 @@ export default function HomePage() {
 
       {firebaseMessaging.fcmRegistrationToken && (
         <>
-          <Text text='FCM Registration Token:' sx={{ mb: 1 }} />
+          <Box
+            sx={{
+              display: 'grid',
+              gridAutoFlow: 'column',
+              justifyContent: 'start',
+              alignItems: 'center',
+              mb: 1,
+              gridGap: '10px',
+            }}
+          >
+            <Text text='FCM Registration Token:' />
+            <CopyToClipboard text={firebaseMessaging.fcmRegistrationToken}>
+              <Button>Copy</Button>
+            </CopyToClipboard>
+          </Box>
 
           <Text
             text={firebaseMessaging.fcmRegistrationToken}
@@ -58,10 +72,6 @@ export default function HomePage() {
               color: 'grey.main',
             }}
           />
-
-          <CopyToClipboard sx={{ mt: 2 }} text={firebaseMessaging.fcmRegistrationToken}>
-            <Button>Copy</Button>
-          </CopyToClipboard>
         </>
       )}
     </Box>
