@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 import LinearProgress from '@mui/material/LinearProgress'
 import useFirebaseMessaging from '@useweb/use-firebase-messaging'
 
+import CopyToClipboard from '../../lib/components/CopyToClipboard/CopyToClipboard'
 import Text from '../../lib/components/Text/Text'
 import Header from '../../lib/components/_unique/Header/Header'
 import useSnackbar from '../../lib/components/Snackbar/Snackbar'
@@ -56,6 +58,10 @@ export default function HomePage() {
               color: 'grey.main',
             }}
           />
+
+          <CopyToClipboard sx={{ mt: 2 }} text={firebaseMessaging.fcmRegistrationToken}>
+            <Button>Copy</Button>
+          </CopyToClipboard>
         </>
       )}
     </Box>
