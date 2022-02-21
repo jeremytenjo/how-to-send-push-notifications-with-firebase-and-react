@@ -2,7 +2,7 @@
   <a href="https://how-to-use-firebase-messaging-with-react.vercel.app/" rel="noopener" target="_blank"><img width="1200" src="https://www.jeremytenjo.com/images/banners/how-to-use-firebase-messaging-with-react.png" alt="jeremy banner logo"></a></p>
 </p>
 
-Full tutorial here https://jeremytenjo.com/tutorials/posts/how-to-use-firebase-messaging-with-react
+Full tutorial here https://www.jeremytenjo.com/tutorials/posts/how-to-use-firebase-messaging-with-react
 
 ### Quick tutorial
 
