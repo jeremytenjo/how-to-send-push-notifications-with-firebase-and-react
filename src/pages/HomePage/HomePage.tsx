@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Box from '@mui/material/Box'
+import LinearProgress from '@mui/material/LinearProgress'
 import useFirebaseMessaging from '@useweb/use-firebase-messaging'
 import useFirebaseFunction from '@useweb/use-firebase-function'
 
@@ -9,22 +10,17 @@ import AsyncResult from '../../lib/components/AsyncResult/AsyncResult'
 import useSnackbar from '../../lib/components/Snackbar/Snackbar'
 
 export default function HomePage() {
-  const [fcmRegistrationToken, setFcmRegistrationToken] = useState('')
   const snackbar = useSnackbar()
 
-  const messaging = useFirebaseMessaging({
-    onFcmRegistrationToken: (fcmRegistrationToken) => {
-      console.log({ fcmRegistrationToken })
-      setFcmRegistrationToken(fcmRegistrationToken)
-    },
+  const firebaseMessaging = useFirebaseMessaging({
     onMessage: (message) => {
-      console.log({ message })
-      snackbar.show({ message: message.data.title })
+      console.log(`Received foreground message`, message)
+      snackbar.show({ message: message?.notification?.title || message?.data?.title })
     },
   })
 
   useEffect(() => {
-    messaging.init()
+    firebaseMessaging.init()
   }, [])
 
   const sendNotifcation = useFirebaseFunction({ name: 'sendNotification' })
@@ -36,26 +32,44 @@ export default function HomePage() {
         tutorialLink='how-to-use-firebase-messaging-with-react'
       />
 
-      <Text text='FCM Registration Token:' sx={{ mb: 1 }} />
-
-      {fcmRegistrationToken && (
-        <Text
-          text={fcmRegistrationToken}
-          sx={{
-            width: '100%',
-            overflowWrap: 'break-word',
-            fontSize: '14px',
-            color: 'grey.main',
-          }}
-        />
+      {firebaseMessaging.initializing && (
+        <>
+          <Text
+            text='Initializing Firebase Messaging (enable notifications for this page)'
+            sx={{ mb: 2 }}
+          />
+          <LinearProgress />
+        </>
       )}
 
-      <AsyncResult
-        asyncFunction={sendNotifcation}
-        successMessage={'Notification send successfully!'}
-        triggerButtonText='Trigger Notification'
-        functionPayload={{ data: { fcmRegistrationToken } }}
-      />
+      {firebaseMessaging.error && (
+        <Text text={firebaseMessaging.error.toString()} sx={{ color: 'red' }} />
+      )}
+
+      {firebaseMessaging.fcmRegistrationToken && (
+        <>
+          <Text text='FCM Registration Token:' sx={{ mb: 1 }} />
+
+          <Text
+            text={firebaseMessaging.fcmRegistrationToken}
+            sx={{
+              width: '100%',
+              overflowWrap: 'break-word',
+              fontSize: '14px',
+              color: 'grey.main',
+            }}
+          />
+
+          <AsyncResult
+            asyncFunction={sendNotifcation}
+            successMessage={'Notification send successfully!'}
+            triggerButtonText='Trigger Notification'
+            functionPayload={{
+              data: { fcmRegistrationToken: firebaseMessaging.fcmRegistrationToken },
+            }}
+          />
+        </>
+      )}
     </Box>
   )
 }
