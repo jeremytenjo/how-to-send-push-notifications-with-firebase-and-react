@@ -1,5 +1,4 @@
 // https://github.com/jeremytenjo/quick-component-creator/tree/master#component-type-properties
-
 const files = [
   {
     path: ({ name }) => `${name}.ts`,

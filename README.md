@@ -1,23 +1,9 @@
-# Website starter
+# How to use Firebase Messaging with React
 
-Starter built on top Next.js with MUI integration and helpers to develop faster.
+1. Update `firebaseConfig` in `src/Firebase/Firebase.tsx` with your project's configuration.
 
-## Tech
+2. Update `firebase project id` in `.firebaserc` with your project's id.
 
-- Nextjs
-- MUI
+3. run `npm i && npm run dev`
 
-## Productivity boosters 🚀
-
-### Generate logo assets
-
-1. Update `image/logo/logo.svg`
-2. run `npm run helpers:generate-logo-assets`
-
-### Create Icons
-
-Quickly create [MUI svg icons](https://mui.com/components/icons/#createsvgicon)
-
-1. run `npm run helpers:create-icon`
-
-TODO add GIF sample
+4. open `http://localhost:3001/`

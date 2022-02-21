@@ -5,6 +5,11 @@ const files = [
     
     import ${name}Ui from './${name}Ui/${name}.ui'
 
+    type Props = { 
+      loading: boolean 
+      empty: boolean 
+    }
+    
     export default function ${name}() {        
       return <${name}Ui />
     }`,
@@ -14,14 +19,10 @@ const files = [
     template: ({ name }) => `import React from 'react'
     import Box from '@mui/material/Box'
 
-    type Props = {
-      name: string
-    }
-
-    export default function ${name}Ui({name}: Props) {        
+    export default function ${name}Ui() {        
       return (
         <Box>
-        ${name}
+          hello
         </Box>
       )
     }`,

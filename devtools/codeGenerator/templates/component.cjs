@@ -11,14 +11,10 @@ const files = [
   
     export default function ${namePascalCase}({ name }: ${propsName}) {
       return (
-        <Wrapper>
+        <Box>
          ${name}
-        </Wrapper>
+        </Box>
       );
-    }
-
-    const Wrapper = ({ children }) => {
-      return <Box>{children}</Box>
     }
       `
     },

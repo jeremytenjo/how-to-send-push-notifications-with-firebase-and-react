@@ -1,18 +1,68 @@
-import chalk from 'chalk'
+import shellDashboard from '../../devtools/utils/terminal/shellDashboard.js'
+import getAppConfig from '../../app.config.js'
+import type { CommandProps } from '../../devtools/utils/terminal/shellDashboard.js'
+import firebaseJson from '../../firebase.json'
 
-import getIpAdress from '../../devtools/utils/node/getIpAdress.js'
-import shell from '../../devtools/utils/node/shell.js'
-import setType from '../../devtools/utils/pkgJson/setType/setType.cjs'
+type Props = {
+  onReady?: () => any
+}
 
-export default function dev() {
-  console.clear()
+export default async function dev({ onReady }: Props = { onReady: undefined }) {
+  const appConfig = await getAppConfig()
+  const emulatorPorts: number[] = []
+  const waitForPortsMessage = 'Waiting for emulator data'
 
-  const ipAdress = getIpAdress()
+  for (const [, value] of Object.entries(firebaseJson.emulators)) {
+    emulatorPorts.push(value.port)
+  }
 
-  console.log(`${chalk.green('network')} - http://${ipAdress}:3000`)
+  const commands: CommandProps[] = [
+    {
+      label: 'Vite',
+      command: 'npm run app:dev',
+      ports: [appConfig.server.local.port],
+      color: '#01BF81',
+      enableQRCode: true,
+      waitForPorts: {
+        ports: emulatorPorts,
+        message: waitForPortsMessage,
+      },
+    },
+    {
+      label: `Storybook`,
+      command: `npm run storybook:dev`,
+      ports: [6007],
+      color: '#FF4785',
+      enableQRCode: true,
+      waitForPorts: {
+        ports: emulatorPorts,
+        message: waitForPortsMessage,
+      },
+    },
+  ]
 
-  // TODO remove setType when https://github.com/vercel/next.js/pull/33637 is merged
-  setType({ type: 'commonjs' })
+  if (firebaseJson.emulators) {
+    const command = firebaseJson.emulators.functions.port
+      ? 'npm run functions:dev'
+      : 'npm run emulators:start'
 
-  shell('node_modules/.bin/next dev')
+    if (!emulatorPorts.length) {
+      throw new Error('Missing emulator ports in firebase.json')
+    }
+
+    commands.push({
+      label: `Firebase Emulators`,
+      command,
+      ports: emulatorPorts,
+      color: '#FFCB2E',
+      onCommandRunning: async () => {
+        const addEmulatorData = await import(
+          '../../src/lib/utils/firebase/emulator/addEmulatorData/addEmulatorData.js'
+        )
+        addEmulatorData.default()
+      },
+    })
+  }
+
+  shellDashboard({ commands, onCommandsRunning: onReady })
 }

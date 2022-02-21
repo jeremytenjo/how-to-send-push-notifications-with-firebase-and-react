@@ -1,7 +1,7 @@
 import React from 'react'
 import Typography, { type TypographyProps } from '@mui/material/Typography'
 
-export type TextProps = {
+type Props = {
   text: string
   tag?: any
 } & TypographyProps
@@ -9,12 +9,7 @@ export type TextProps = {
 /**
  * [Docs](https://material-ui.com/api/typography/)
  */
-export default function Text({
-  text,
-  tag = 'p',
-  variant = 'body1',
-  ...props
-}: TextProps) {
+export default function Text({ text, tag = 'p', variant = 'body1', ...props }: Props) {
   return (
     <Typography component={tag} variant={variant} {...props}>
       {text}

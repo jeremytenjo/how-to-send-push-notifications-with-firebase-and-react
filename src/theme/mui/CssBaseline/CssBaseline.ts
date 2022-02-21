@@ -1,13 +1,14 @@
+import poppins400Font from '../../tokens/typography/fonts/poppins/regular.woff2'
 import colors from '../../tokens/colors'
 
 export default {
   MuiCssBaseline: {
     styleOverrides: `
           @font-face {
-            font-family: 'PoppinsRegular';
+            font-family: 'Poppins400';
             font-style: normal;
             font-display: swap;
-            src: url('/fonts/poppins/regular.woff2') format('woff2');
+            src: url(${poppins400Font}) format('woff2');
           }     
        
           * {
@@ -15,7 +16,9 @@ export default {
           }
 
           html {
+            width: 100%;
             overflow-x: hidden;
+            overscroll-behavior-y: contain;
             scroll-behavior: smooth;
           }
 
@@ -37,17 +40,9 @@ export default {
             margin: 0;
           }
 
-          a {
-            text-decoration: none;
-          }
-
           ul {
             margin: 0;
             padding: 0;
-            list-style: none;
-          }
-
-          li {
             list-style: none;
           }
 
@@ -62,16 +57,6 @@ export default {
 
          :root {
            --use-pull-to-refresh-spinner-color: ${colors.primary.main};
-          }
-
-          .visually-hidden {
-            clip: rect(0 0 0 0);
-            clip-path: inset(50%);
-            height: 1px;
-            overflow: hidden;
-            position: absolute;
-            white-space: nowrap;
-            width: 1px;
           }
 
         `,

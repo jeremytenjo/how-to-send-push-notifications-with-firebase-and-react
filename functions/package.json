@@ -1,0 +1,15 @@
+{
+  "name": "functions",
+  "private": true,
+  "engines": {
+    "node": "16"
+  },
+  "main": "build/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.1",
+    "firebase-functions": "^3.16.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.3.3"
+  }
+}
