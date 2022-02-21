@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box'
 
 import { SnackbarProvider } from '../lib/components/Snackbar/Snackbar'
-import LinkToPortfolio from '../lib/components/_unique/LinkToPortfolio/LinkToPortfolio'
+import LinkToPortfolio from '../lib/components/LinkToPortfolio/LinkToPortfolio'
 
 export default function ShellLayout({ children }) {
   return (
