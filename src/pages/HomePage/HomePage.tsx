@@ -26,7 +26,7 @@ export default function HomePage() {
   return (
     <Box>
       <Header
-        title='How to use Firebase Messaging with React'
+        title='Firebase Messaging example'
         tutorialLink='how-to-use-firebase-messaging-with-react'
         repoLink='https://github.com/jeremytenjo/how-to-use-firebase-messaging-with-react'
       />
