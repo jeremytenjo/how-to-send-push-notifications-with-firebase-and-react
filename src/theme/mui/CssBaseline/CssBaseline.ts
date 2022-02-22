@@ -18,7 +18,6 @@ export default {
           html {
             width: 100%;
             overflow-x: hidden;
-            overscroll-behavior-y: contain;
             scroll-behavior: smooth;
           }
 
@@ -26,7 +25,6 @@ export default {
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             box-sizing: border-box;
             margin: 0;
-            overscroll-behavior-y: contain;
             padding: 20px;
           }
 
