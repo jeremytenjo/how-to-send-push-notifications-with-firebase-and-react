@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { UseInstallPromptProvider } from '@useweb/use-install-prompt'
 
 import Firebase from './services/firebase/firebase'
 import Router from './pages/router'
@@ -7,11 +8,13 @@ import Theme from './theme/theme'
 
 function App() {
   return (
-    <Firebase>
-      <Theme>
-        <Router />
-      </Theme>
-    </Firebase>
+    <UseInstallPromptProvider>
+      <Firebase>
+        <Theme>
+          <Router />
+        </Theme>
+      </Firebase>
+    </UseInstallPromptProvider>
   )
 }
 
