@@ -28,7 +28,7 @@ export default function HomePage() {
   return (
     <Box>
       <Header
-        title='Firebase Messaging Example'
+        title='Firebase Messaging Push Notification Example'
         tutorialLink='how-to-send-push-notifications-with-firebase-and-react'
         repoLink='https://github.com/jeremytenjo/how-to-send-push-notifications-with-firebase-and-react'
       />
