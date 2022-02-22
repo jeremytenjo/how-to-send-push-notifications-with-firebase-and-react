@@ -1,8 +1,8 @@
 <p align="center">
-  <a href="https://how-to-use-firebase-messaging-with-react.vercel.app/" rel="noopener" target="_blank"><img width="1200" src="https://www.jeremytenjo.com/images/banners/how-to-use-firebase-messaging-with-react.png" alt="jeremy banner logo"></a></p>
+  <a href="https://how-to-send-push-notifications-with-firebase-and-react.vercel.app/" rel="noopener" target="_blank"><img width="1200" src="https://www.jeremytenjo.com/images/banners/how-to-send-push-notifications-with-firebase-and-react.png" alt="jeremy banner logo"></a></p>
 </p>
 
-Full tutorial here https://www.jeremytenjo.com/tutorials/posts/how-to-use-firebase-messaging-with-react
+Full tutorial here https://www.jeremytenjo.com/tutorials/posts/how-to-send-push-notifications-with-firebase-and-react
 
 ### Quick tutorial
 

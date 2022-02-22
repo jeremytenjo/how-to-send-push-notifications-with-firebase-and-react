@@ -1,6 +1,6 @@
 {
-  "name": "how-to-use-firebase-messaging-with-react",
-  "description": "how-to-use-firebase-messaging-with-react",
+  "name": "how-to-send-push-notifications-with-firebase-and-react",
+  "description": "how-to-send-push-notifications-with-firebase-and-react",
   "version": "0.0.1",
   "private": true,
   "type": "module",

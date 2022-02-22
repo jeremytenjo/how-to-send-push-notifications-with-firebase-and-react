@@ -15,7 +15,9 @@ export default function HomePage() {
   const firebaseMessaging = useFirebaseMessaging({
     onMessage: (message) => {
       console.log(`Received foreground message`, message)
-      snackbar.show({ message: message?.notification?.title || message?.data?.title })
+      snackbar.show({
+        message: message?.notification?.title || message?.data?.title,
+      })
     },
   })
 
@@ -27,8 +29,8 @@ export default function HomePage() {
     <Box>
       <Header
         title='Firebase Messaging Example'
-        tutorialLink='how-to-use-firebase-messaging-with-react'
-        repoLink='https://github.com/jeremytenjo/how-to-use-firebase-messaging-with-react'
+        tutorialLink='how-to-send-push-notifications-with-firebase-and-react'
+        repoLink='https://github.com/jeremytenjo/how-to-send-push-notifications-with-firebase-and-react'
       />
 
       {firebaseMessaging.initializing && (
