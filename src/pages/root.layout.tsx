@@ -6,7 +6,7 @@ import LinkToPortfolio from '../lib/components/LinkToPortfolio/LinkToPortfolio'
 
 export default function ShellLayout({ children }) {
   return (
-    <Box sx={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <Box sx={{ maxWidth: '1200px', margin: '0 auto', pb: '50px' }}>
       <SnackbarProvider>
         <main>{children}</main>
         <LinkToPortfolio />
