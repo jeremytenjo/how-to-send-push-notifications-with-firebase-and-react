@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import LinearProgress from '@mui/material/LinearProgress'
-import useFirebaseMessaging from '@useweb/use-firebase-messaging'
+import useFirebaseMessaging from '@useweb/firebase/useFirebaseMessaging'
 
 import CopyToClipboard from '../../lib/components/CopyToClipboard/CopyToClipboard'
 import Text from '../../lib/components/Text/Text'
@@ -34,13 +34,10 @@ export default function HomePage() {
         tutorialLink='how-to-send-push-notifications-with-firebase-and-react'
         repoLink='https://github.com/jeremytenjo/how-to-send-push-notifications-with-firebase-and-react'
       />
-
       {firebaseMessaging.initializing && <InitializingFirebaseMessaging />}
-
       {firebaseMessaging.error && (
         <FirebaseMessagingError error={firebaseMessaging.error.toString()} />
       )}
-
       {firebaseMessaging.fcmRegistrationToken && (
         <>
           <CopyRegistrationToken

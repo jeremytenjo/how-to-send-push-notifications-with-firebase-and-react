@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
 import Firebase from './services/firebase/firebase'
 import Router from './pages/router'
@@ -15,4 +15,11 @@ function App() {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const container = document.getElementById('root') as any
+const root = createRoot(container)
+
+root.render(
+  <>
+    <App />
+  </>,
+)

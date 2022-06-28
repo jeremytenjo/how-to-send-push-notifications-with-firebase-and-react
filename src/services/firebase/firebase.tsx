@@ -1,5 +1,5 @@
 import React from 'react'
-import { FirebaseProvider } from '@useweb/use-firebase'
+import { FirebaseProvider } from '@useweb/firebase'
 import { initializeApp } from 'firebase/app'
 import { getMessaging } from 'firebase/messaging'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import LinearProgress from '@mui/material/LinearProgress'
-import useFirebaseFunction from '@useweb/use-firebase-function'
+import useFirebaseFunction from '@useweb/firebase/useFirebaseFunction'
 
 import ReactJson from '../../ReactJson/ReactJson'
 
