@@ -17,8 +17,10 @@ export default function HomePage() {
   const firebaseMessaging = useFirebaseMessaging({
     onMessage: (message) => {
       console.log(`Received foreground message`, message)
+      const snackMessage = message?.notification?.title
+
       snackbar.show({
-        message: message?.data?.notification?.title || message?.data?.title,
+        message: snackMessage,
       })
     },
   })
