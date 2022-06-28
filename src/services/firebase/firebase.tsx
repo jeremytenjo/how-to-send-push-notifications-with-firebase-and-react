@@ -1,5 +1,5 @@
 import React from 'react'
-import { FirebaseConfigProvider } from '@useweb/firebase-config'
+import { FirebaseProvider } from '@useweb/use-firebase'
 import { initializeApp } from 'firebase/app'
 import { getMessaging } from 'firebase/messaging'
 
@@ -14,7 +14,7 @@ const vapidKey =
 
 export default function Firebase({ children }) {
   return (
-    <FirebaseConfigProvider
+    <FirebaseProvider
       firebaseConfig={firebaseConfig}
       firebaseApp={firebaseApp}
       envIsDev={envIsDev}
@@ -24,6 +24,6 @@ export default function Firebase({ children }) {
       }}
     >
       {children}
-    </FirebaseConfigProvider>
+    </FirebaseProvider>
   )
 }
