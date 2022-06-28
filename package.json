@@ -36,7 +36,6 @@
     "zustand": "^3.6.8"
   },
   "devDependencies": {
-    "@arkweid/lefthook": "^0.7.7",
     "@check-light-or-dark/color": "^1.0.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
