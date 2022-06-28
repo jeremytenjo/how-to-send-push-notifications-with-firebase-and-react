@@ -16,8 +16,7 @@
     "test:ts-types": "tsc --noemit",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "install-deps": "npm i && cd functions && npm i",
-    "postinstall": "cd functions && npm i",
-    "prepare": "npx @arkweid/lefthook install"
+    "postinstall": "cd functions && npm i"
   },
   "dependencies": {
     "@mui/material": "^5.2.7",
