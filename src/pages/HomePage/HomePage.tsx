@@ -18,7 +18,7 @@ export default function HomePage() {
     onMessage: (message) => {
       console.log(`Received foreground message`, message)
       snackbar.show({
-        message: message?.notification?.title || message?.data?.title,
+        message: message?.data?.notification?.title || message?.data?.title,
       })
     },
   })
