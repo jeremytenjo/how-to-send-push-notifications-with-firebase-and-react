@@ -1,5 +1,5 @@
 import getIpAdress from './devtools/utils/node/getIpAdress.js'
-import pkg from './package.json'
+import pkg from './package.json' assert { type: 'json' }
 import themeTokens from './src/theme/tokens/tokens.js'
 
 export default async function appConfig(): Promise<AppConfigTypes> {

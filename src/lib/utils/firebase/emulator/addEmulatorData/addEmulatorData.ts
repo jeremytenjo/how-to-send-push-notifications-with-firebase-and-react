@@ -1,6 +1,6 @@
 import admin from 'firebase-admin'
 
-import firebaseJson from '../../../../../../firebase.json'
+import firebaseJson from '../../../../../../firebase.json' assert { type: 'json' }
 import firebaseConfig from '../../../../../services/firebase/firebase.config.js'
 
 import addMockDataToFirestore from './handlers/addFirestoreEmulatorData.js'

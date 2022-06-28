@@ -1,16 +1,16 @@
-// templates for the `Quick Component Creator` vscode plugin
-// https://marketplace.visualstudio.com/items?itemName=tenjojeremy.quick-component-creator
+// templates for the `Super Code Generator` vscode plugin
+// https://marketplace.visualstudio.com/items?itemName=tenjojeremy.super-code-generator
 
-const component = require('./templates/component.cjs')
-const story = require('./templates/story.cjs')
-const componentWithStory = require('./templates/componentWithStory.cjs')
-const functions = require('./templates/function.cjs')
-const container = require('./templates/container.cjs')
-const page = require('./templates/page.cjs')
-const globalState = require('./templates/globalState.cjs')
-const asyncHook = require('./templates/asyncHook.cjs')
-const cloudFunction = require('./templates/cloudFunction.cjs')
-const muiOverride = require('./templates/muiOverride.cjs')
+const component = require("./templates/component.cjs");
+const story = require("./templates/story.cjs");
+const componentWithStory = require("./templates/componentWithStory.cjs");
+const functions = require("./templates/function.cjs");
+const container = require("./templates/container.cjs");
+const page = require("./templates/page.cjs");
+const globalState = require("./templates/globalState.cjs");
+const asyncHook = require("./templates/asyncHook.cjs");
+const cloudFunction = require("./templates/cloudFunction.cjs");
+const muiOverride = require("./templates/muiOverride.cjs");
 
 module.exports = [
   component.template,
@@ -23,4 +23,4 @@ module.exports = [
   globalState.template,
   asyncHook.template,
   cloudFunction.template,
-]
+];
