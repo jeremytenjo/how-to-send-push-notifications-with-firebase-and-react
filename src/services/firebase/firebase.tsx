@@ -6,6 +6,8 @@ import { getMessaging, isSupported } from 'firebase/messaging'
 import firebaseConfig from './firebase.config'
 
 const firebaseApp = initializeApp(firebaseConfig)
+
+// Messaging is not supported in ios or safari as of 2022
 const messagingIsSupported = await isSupported()
 const messaging = messagingIsSupported ? getMessaging(firebaseApp) : undefined
 
