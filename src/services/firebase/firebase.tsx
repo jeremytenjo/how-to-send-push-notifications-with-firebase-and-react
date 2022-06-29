@@ -14,18 +14,16 @@ const vapidKey =
 
 export default function Firebase({ children }) {
   return (
-    <>
-      <FirebaseProvider
-        firebaseConfig={firebaseConfig}
-        firebaseApp={firebaseApp}
-        envIsDev={envIsDev}
-        messaging={messaging}
-        messagingOptions={{
-          vapidKey,
-        }}
-      />
-
+    <FirebaseProvider
+      firebaseConfig={firebaseConfig}
+      firebaseApp={firebaseApp}
+      envIsDev={envIsDev}
+      messaging={messaging}
+      messagingOptions={{
+        vapidKey,
+      }}
+    >
       {children}
-    </>
+    </FirebaseProvider>
   )
 }
