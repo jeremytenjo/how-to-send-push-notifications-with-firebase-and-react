@@ -21,8 +21,7 @@
   "dependencies": {
     "@mui/material": "^5.2.7",
     "@tippyjs/react": "^4.2.6",
-    "@useweb/firebase": "^4.0.2",
-    "@useweb/use-firebase": "^10.0.1",
+    "@useweb/firebase": "^5.0.0",
     "@useweb/use-async": "^4.2.0",
     "@useweb/use-data": "^9.1.0",
     "@useweb/use-event-listener": "^1.2.0",
