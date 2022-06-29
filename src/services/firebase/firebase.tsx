@@ -1,12 +1,13 @@
 import React from 'react'
 import { FirebaseProvider } from '@useweb/firebase/useFirebase'
 import { initializeApp } from 'firebase/app'
-import { getMessaging } from 'firebase/messaging'
+import { getMessaging, isSupported } from 'firebase/messaging'
 
 import firebaseConfig from './firebase.config'
 
 const firebaseApp = initializeApp(firebaseConfig)
-const messaging = getMessaging(firebaseApp)
+const messagingIsSupported = await isSupported()
+const messaging = messagingIsSupported ? getMessaging(firebaseApp) : undefined
 
 const envIsDev = process.env.NODE_ENV === 'development'
 const vapidKey =
